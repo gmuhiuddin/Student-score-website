@@ -56,3 +56,13 @@ td{
 .textCenter{
     text-align: center;
 }
+.delete-btn{
+    width: 99px;
+height: 26px;
+cursor: pointer;
+border: 1px solid black;
+border-radius: 3px;
+    padding: 1.5px;
+    color: rgb(248, 244, 244);
+    background-color: red;
+}

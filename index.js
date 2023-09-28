@@ -34,11 +34,21 @@ let tr = document.createElement('tr')
     stdntScoreTd.className = 'textCenter'
    stdntScoreTd.innerText = studentScoreInput
 
-   tr.appendChild(studentNumberTd)
+let deleteBtn = document.createElement('button');
+deleteBtn.innerText = 'Delete'
+deleteBtn.className = 'delete-btn'
+
+
+//    tr.appendChild(studentNumberTd)
    tr.appendChild(stdntNameTd)
    tr.appendChild(stdntFNameTd)
    tr.appendChild(stdntScoreTd)
    tr.appendChild(totalTd)
+   tr.appendChild(deleteBtn)
+
+   deleteBtn.addEventListener('click',function (){
+       tr.remove()
+   })
 
    tableForUser.appendChild(tr)
 }
