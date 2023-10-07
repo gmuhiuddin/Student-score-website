@@ -1,6 +1,5 @@
 let addInfoBtn = document.getElementById('addInfoBtn');
 addInfoBtn.addEventListener('click',studentScoreFunc);
-let studentNumber = 0;
 let total = 0;  
 
 function studentScoreFunc (){
@@ -10,15 +9,11 @@ function studentScoreFunc (){
 
     let tableForUser = document.getElementById('tableForUser');
 
-studentNumber++
 studentScoreInput = +studentScoreInput
     total += studentScoreInput
 
 let tr = document.createElement('tr')
 
-    let studentNumberTd = document.createElement('td')
-    studentNumberTd.className = 'textCenter'
-    studentNumberTd.innerText = studentNumber
 
     let totalTd = document.createElement('td')
     totalTd.className = 'textCenter'
@@ -31,24 +26,26 @@ let tr = document.createElement('tr')
     stdntFNameTd.innerText = FatherNameInput
 
     let stdntScoreTd = document.createElement('td')
-    stdntScoreTd.className = 'textCenter'
+    stdntScoreTd.className = 'textCenter stuScor'
    stdntScoreTd.innerText = studentScoreInput
 
 let deleteBtn = document.createElement('button');
 deleteBtn.innerText = 'Delete'
 deleteBtn.className = 'delete-btn'
 
+deleteBtn.addEventListener('click',function (){
+    tr.remove()
+    let numValue = tr.childNodes[2].innerText
+    total = total - numValue
+})
 
-//    tr.appendChild(studentNumberTd)
    tr.appendChild(stdntNameTd)
    tr.appendChild(stdntFNameTd)
    tr.appendChild(stdntScoreTd)
    tr.appendChild(totalTd)
    tr.appendChild(deleteBtn)
 
-   deleteBtn.addEventListener('click',function (){
-       tr.remove()
-   })
+   
 
    tableForUser.appendChild(tr)
 }
