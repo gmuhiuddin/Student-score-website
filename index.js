@@ -45,7 +45,5 @@ deleteBtn.addEventListener('click',function (){
    tr.appendChild(totalTd)
    tr.appendChild(deleteBtn)
 
-   
-
    tableForUser.appendChild(tr)
 }
